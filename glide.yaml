@@ -1,0 +1,6 @@
+package: github.com/mh-cbon/archive
+import:
+- package: github.com/jhoonb/archivex
+- package: github.com/urfave/cli
+  version: ^1.17.0
+- package: github.com/dustin/go-humanize
