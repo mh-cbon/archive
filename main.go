@@ -83,22 +83,27 @@ func create (c *cli.Context) error {
       return cli.NewExitError("Output file already exists. Use force argument.", 1)
     }
   }
-  dir := filepath.Dir(output)
-  if len(dir)>0 {
-    err := os.MkdirAll(filepath.Dir(output), 0644)
-    if err!= nil {
-      return cli.NewExitError("Failed to create output directory '"+dir+"'.", 1)
-    }
-  }
 
   var archiver archivex.Archivex
   if strings.Index(output, ".zip")>-1 {
     archiver = new(archivex.ZipFile)
   } else if strings.Index(output, ".tar")>-1 {
     archiver = new(archivex.TarFile)
+  } else if strings.Index(output, ".tgz")>-1 {
+    output = strings.Replace(output, filepath.Ext(output), "", -1) + ".tar.gz"
+    archiver = new(archivex.TarFile)
   } else {
     return cli.NewExitError("Cannot handle archive '"+output+"' is not zip|tar|tar.gz.", 1)
   }
+
+  dir := filepath.Dir(output)
+  if len(dir)>0 {
+    err := os.MkdirAll(dir, 0755)
+    if err!= nil {
+      return cli.NewExitError("Failed to create output directory '"+dir+"'.", 1)
+    }
+  }
+
   err := archiver.Create(output)
   if err!= nil {
     fmt.Println(err)

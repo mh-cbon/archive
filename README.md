@@ -46,6 +46,12 @@ USAGE:
 OPTIONS:
    --output value, -o value	Output file
    --force, -f			Force overwrite
+
+EXAMPLES:
+  archive create -o test.zip README.md
+  archive create -o test.zip uncompress
+  archive create -o test.zip README.md uncompress
+  archive create -o build/test.zip README.md uncompress
 ```
 
 #### extract
