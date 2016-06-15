@@ -1,4 +1,11 @@
 package: github.com/mh-cbon/archive
+scripts:
+  preversion: |
+    git fetch --tags \
+    && philea "go vet %s" "go fmt %s" \
+    && gen-version-file --ver=!newversion! \
+    && commit -f "GenVersionFile/index.go" -m "version update"
+  postversion: git push && git push --tags
 import:
 - package: github.com/jhoonb/archivex
 - package: github.com/urfave/cli
