@@ -12,21 +12,21 @@ import (
 	"archive/tar"
 )
 
-func Uncompress (src string, dest string) error {
+func Uncompress (src string, dest string, info chan<- string) error {
   if filepath.Ext(src)==".zip" {
-    return Unzip(src, dest)
+    return Unzip(src, dest, info)
   } else if filepath.Ext(src)==".gz" && strings.Index(src, ".tar.gz")>-1 {
-    return Untargz(src, dest)
+    return Untargz(src, dest, info)
   } else if filepath.Ext(src)==".tgz" {
-    return Untargz(src, dest)
+    return Untargz(src, dest, info)
   } else if filepath.Ext(src)==".tar" {
-    return Untar(src, dest)
+    return Untar(src, dest, info)
   } else {
     return errors.New("cannot handle file '"+src+"'")
   }
 }
 
-func Unzip(src, dest string) error {
+func Unzip(src, dest string, info chan<- string) error {
   r, err := zip.OpenReader(src)
   if err != nil {
     return err
@@ -44,8 +44,14 @@ func Unzip(src, dest string) error {
     path := filepath.Join(dest, srcFile.Name)
 
     if srcFile.FileInfo().IsDir() {
+      info <- path
       return os.MkdirAll(path, srcFile.Mode())
     } else {
+      info <- path
+      err = os.MkdirAll(filepath.Dir(path), 0755)
+      if err != nil {
+        return err
+      }
       dstFile, err := os.OpenFile(path, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, srcFile.Mode())
       if err != nil {
         return err
@@ -74,7 +80,7 @@ func Unzip(src, dest string) error {
   return nil
 }
 
-func Untar(src, dest string) error {
+func Untar(src, dest string, info chan<- string) error {
   srcFile, err := os.Open(src)
 	if err != nil {
     return err
@@ -94,13 +100,19 @@ func Untar(src, dest string) error {
     stat := hdr.FileInfo()
 
     if stat.IsDir() {
-      err = os.MkdirAll(path, stat.Mode())
+      info <- path
+      err = os.MkdirAll(path, 0755)
       if err != nil {
         return err
       }
       return nil;
     } else {
-      dst, err := os.OpenFile(path, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, stat.Mode())
+      info <- path
+      err = os.MkdirAll(filepath.Dir(path), 0755)
+      if err != nil {
+        return err
+      }
+      dst, err := os.OpenFile(path, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0755)
       if err != nil {
         return err
       }
@@ -135,7 +147,7 @@ func Untar(src, dest string) error {
   return srcFile.Close()
 }
 
-func Untargz(src, dest string) error {
+func Untargz(src, dest string, info chan<- string) error {
   srcFile, err := os.Open(src)
 	if err != nil {
     return err
@@ -162,12 +174,18 @@ func Untargz(src, dest string) error {
     stat := hdr.FileInfo()
 
     if stat.IsDir() {
-      err = os.MkdirAll(path, stat.Mode())
+      info <- path
+      err = os.MkdirAll(path, 0755)
       if err != nil {
         return err
       }
       return nil;
     } else {
+      info <- path
+      err = os.MkdirAll(filepath.Dir(path), 0755)
+      if err != nil {
+        return err
+      }
       dst, err := os.OpenFile(path, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, stat.Mode())
       if err != nil {
         return err

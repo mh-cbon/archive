@@ -4,6 +4,7 @@ import (
   "fmt"
   "os"
   "strings"
+  "strconv"
   "path/filepath"
 
   "github.com/mh-cbon/archive/uncompress"
@@ -158,10 +159,20 @@ func extract (c *cli.Context) error {
   if len(src)==0 {
     return cli.NewExitError("<file> source arguments are required.", 1)
   }
-  err := uncompress.Uncompress(src, dest)
+  info := make(chan string)
+  itemsCnt := 0
+  go func (){
+    for f := range info {
+      fmt.Println(f)
+      itemsCnt++
+    }
+  }()
+  err := uncompress.Uncompress(src, dest, info)
+  close(info)
   if err!= nil {
     fmt.Println(err)
     return cli.NewExitError("Failed to extract the archive '"+src+"'.", 1)
   }
+  fmt.Println("✓ "+dest+ ": "+strconv.Itoa(itemsCnt)+" files created")
   return nil
 }

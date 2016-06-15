@@ -52,6 +52,8 @@ EXAMPLES:
   archive create -o test.zip uncompress
   archive create -o test.zip README.md uncompress
   archive create -o build/test.zip README.md uncompress
+  archive create -o build/test.tgz README.md uncompress
+  archive create -o build/test.tar.gz README.md uncompress
 ```
 
 #### extract
@@ -66,4 +68,9 @@ USAGE:
 OPTIONS:
    --dest value, -d value	Destination path
    --force, -f			Force overwrite
+
+EXAMPLES:
+  archive extract -d res build/test.zip
+  archive extract -d res build/test.tar.gz
+
 ```
