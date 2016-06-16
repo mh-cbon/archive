@@ -67,18 +67,18 @@ func main() {
 }
 
 func create(c *cli.Context) error {
-	output     := c.String("output")
-	changeDir  := c.String("change-dir")
-  cwd, err := os.Getwd()
-  if err!=nil {
-    return err
-  }
-  if len(changeDir)>0 {
-    err := os.Chdir(changeDir)
-    if err!=nil {
-      return err
-    }
-  }
+	output := c.String("output")
+	changeDir := c.String("change-dir")
+	cwd, err := os.Getwd()
+	if err != nil {
+		return err
+	}
+	if len(changeDir) > 0 {
+		err := os.Chdir(changeDir)
+		if err != nil {
+			return err
+		}
+	}
 	files := make([]string, 0)
 	for _, f := range c.Args() {
 		sF := string(f)
@@ -89,12 +89,12 @@ func create(c *cli.Context) error {
 			fmt.Println("File '" + sF + "' does not exist")
 		}
 	}
-  if len(changeDir)>0 {
-    err := os.Chdir(cwd)
-    if err!=nil {
-      return err
-    }
-  }
+	if len(changeDir) > 0 {
+		err := os.Chdir(cwd)
+		if err != nil {
+			return err
+		}
+	}
 	if len(output) == 0 {
 		return cli.NewExitError("Output argument is required", 1)
 	}
@@ -133,13 +133,13 @@ func create(c *cli.Context) error {
 		return cli.NewExitError("Failed to create output archive '"+output+"'.", 1)
 	}
 	gotErr := false
-  if len(changeDir)>0 {
-    err := os.Chdir(changeDir)
-    if err!=nil {
-  		fmt.Println(err)
-  		gotErr = true
-    }
-  }
+	if len(changeDir) > 0 {
+		err := os.Chdir(changeDir)
+		if err != nil {
+			fmt.Println(err)
+			gotErr = true
+		}
+	}
 	for _, f := range files {
 		s, _ := os.Stat(f)
 		if s.IsDir() {
@@ -156,13 +156,13 @@ func create(c *cli.Context) error {
 			}
 		}
 	}
-  if len(changeDir)>0 {
-    err := os.Chdir(cwd)
-    if err!=nil {
-  		fmt.Println(err)
-  		gotErr = true
-    }
-  }
+	if len(changeDir) > 0 {
+		err := os.Chdir(cwd)
+		if err != nil {
+			fmt.Println(err)
+			gotErr = true
+		}
+	}
 	err = archiver.Close()
 	if err != nil {
 		fmt.Println(err)
