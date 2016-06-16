@@ -71,7 +71,7 @@ func create(c *cli.Context) error {
 	changeDir := c.String("change-dir")
 	cwd, err := os.Getwd()
 	if err != nil {
-    return cli.NewExitError(err.Error(), 1)
+		return cli.NewExitError(err.Error(), 1)
 	}
 	if len(changeDir) > 0 {
 		err := os.Chdir(changeDir)
