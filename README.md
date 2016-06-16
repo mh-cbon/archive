@@ -54,6 +54,7 @@ EXAMPLES:
   archive create -o build/test.zip README.md uncompress
   archive create -o build/test.tgz README.md uncompress
   archive create -o build/test.tar.gz README.md uncompress
+  archive create -o test.zip -C fixtures/create/test1/ .
 ```
 
 #### extract

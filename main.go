@@ -127,7 +127,7 @@ func create(c *cli.Context) error {
 		}
 	}
 
-	err := archiver.Create(output)
+	err = archiver.Create(output)
 	if err != nil {
 		fmt.Println(err)
 		return cli.NewExitError("Failed to create output archive '"+output+"'.", 1)
