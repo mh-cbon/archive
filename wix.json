@@ -1,0 +1,26 @@
+{
+  "product": "archive",
+  "company": "mh-cbon",
+  "license": "LICENSE",
+  "upgrade-code": "D0FE7A8F-2D74-4FC0-85EE-E4C35679C169",
+  "files": {
+    "guid": "ED352604-F330-4CAD-9C3F-D38BA1987A14",
+    "items": [
+      "archive.exe"
+    ]
+  },
+  "env": {
+    "guid": "BE5EC655-5C71-4B34-B565-550909796CCB",
+    "vars": [
+      {
+        "name": "PATH",
+        "value": "[INSTALLDIR]",
+        "permanent": "no",
+        "system": "no",
+        "action": "set",
+        "part": "last"
+      }
+    ]
+  },
+  "shortcuts": {}
+}
