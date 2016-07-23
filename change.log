@@ -1,0 +1,45 @@
+
+0.0.4
+
+  * packaging: add deb/rpm/msi support
+  * README: update install section
+  * release: update script
+
+  - mh-cbon <mh-cbon@users.noreply.github.com>
+
+-- mh-cbon <mh-cbon@users.noreply.github.com>; Sat, 23 Jul 2016 20:41:52 +0200
+
+
+
+0.0.3
+
+  * release scripts
+  * improve release scripts
+  * ensure exit are clean
+
+  - mh-cbon <mh-cbon@users.noreply.github.com>
+
+-- mh-cbon <mh-cbon@users.noreply.github.com>; Thu, 16 Jun 2016 22:11:16 +0200
+
+
+
+0.0.2
+
+  * add -C option to change cwd
+  * add test fixtures
+
+  - mh-cbon <mh-cbon@users.noreply.github.com>
+
+-- mh-cbon <mh-cbon@users.noreply.github.com>; Thu, 16 Jun 2016 13:11:25 +0200
+
+
+
+0.0.1
+
+  * Initial release
+
+  - mh-cbon <mh-cbon@users.noreply.github.com>
+
+-- mh-cbon <mh-cbon@users.noreply.github.com>; Wed, 15 Jun 2016 22:15:24 +0200
+
+
