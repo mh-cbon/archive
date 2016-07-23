@@ -59,8 +59,9 @@ USAGE:
    archive create [command options] [arguments...]
 
 OPTIONS:
-   --output value, -o value	Output file
-   --force, -f			Force overwrite
+   --output value, -o value	      Output file
+   --change-dir value, -C value	  Change directory before archiving files
+   --force, -f			              Force overwrite
 
 EXAMPLES:
   archive create -o test.zip README.md
