@@ -1,14 +1,27 @@
 # archive
 
-bin to create / extract zip, tgz archives.
+cross-platform bin to create / extract zip, tgz archives.
 
-# install
+## Install
 
-You can grab a pre-built binary file in the [releases page](https://github.com/mh-cbon/archive/releases)
+Pick an msi package [here](https://github.com/mh-cbon/archive/releases)!
 
+__deb/rpm__
+
+```sh
+curl -L https://raw.githubusercontent.com/mh-cbon/latest/master/install.sh \
+| GH=mh-cbon/archive sh -xe
+# or
+wget -q -O - --no-check-certificate \
+https://raw.githubusercontent.com/mh-cbon/latest/master/install.sh \
+| GH=mh-cbon/archive sh -xe
 ```
-mkdir -p $GOPATH/github.com/mh-cbon
-cd $GOPATH/github.com/mh-cbon
+
+__go__
+
+```sh
+mkdir -p $GOPATH/src/github.com/mh-cbon
+cd $GOPATH/src/github.com/mh-cbon
 git clone https://github.com/mh-cbon/archive.git
 cd archive
 glide install
