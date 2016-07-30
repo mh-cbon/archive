@@ -1,4 +1,15 @@
 
+0.0.5
+
+  * packaging: add choco package, add deb/rpm repositories
+  * changelog: 0.0.4
+
+  - mh-cbon <mh-cbon@users.noreply.github.com>
+
+-- mh-cbon <mh-cbon@users.noreply.github.com>; Sat, 30 Jul 2016 02:32:31 +0200
+
+
+
 0.0.4
 
   * packaging: add deb/rpm/msi support
