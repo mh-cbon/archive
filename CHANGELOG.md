@@ -1,11 +1,24 @@
 # Changelog - archive
 
+### 0.0.6
+
+__Changes__
+
+- packaging: fix travis key
+
+__Contributors__
+
+- mh-cbon
+
+Released by mh-cbon, Sat 30 Jul 2016 -
+[see the diff](https://github.com/mh-cbon/archive/compare/0.0.5...0.0.6#diff)
+______________
+
 ### 0.0.5
 
 __Changes__
 
 - packaging: add choco package, add deb/rpm repositories
-- changelog: 0.0.4
 
 __Contributors__
 
