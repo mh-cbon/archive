@@ -1,5 +1,20 @@
 # Changelog - archive
 
+### 0.0.5
+
+__Changes__
+
+- packaging: add choco package, add deb/rpm repositories
+- changelog: 0.0.4
+
+__Contributors__
+
+- mh-cbon
+
+Released by mh-cbon, Sat 30 Jul 2016 -
+[see the diff](https://github.com/mh-cbon/archive/compare/0.0.4...0.0.5#diff)
+______________
+
 ### 0.0.4
 
 __Changes__
@@ -12,7 +27,8 @@ __Contributors__
 
 - mh-cbon
 
-Released by mh-cbon, Sat 23 Jul 2016
+Released by mh-cbon, Sat 23 Jul 2016 -
+[see the diff](https://github.com/mh-cbon/archive/compare/0.0.3...0.0.4#diff)
 ______________
 
 ### 0.0.3
@@ -27,7 +43,8 @@ __Contributors__
 
 - mh-cbon
 
-Released by mh-cbon, Thu 16 Jun 2016
+Released by mh-cbon, Thu 16 Jun 2016 -
+[see the diff](https://github.com/mh-cbon/archive/compare/0.0.2...0.0.3#diff)
 ______________
 
 ### 0.0.2
@@ -41,7 +58,8 @@ __Contributors__
 
 - mh-cbon
 
-Released by mh-cbon, Thu 16 Jun 2016
+Released by mh-cbon, Thu 16 Jun 2016 -
+[see the diff](https://github.com/mh-cbon/archive/compare/0.0.1...0.0.2#diff)
 ______________
 
 ### 0.0.1
@@ -54,7 +72,8 @@ __Contributors__
 
 - mh-cbon
 
-Released by mh-cbon, Wed 15 Jun 2016
+Released by mh-cbon, Wed 15 Jun 2016 -
+[see the diff](https://github.com/mh-cbon/archive/compare/60826db499c4e397cbdd093051d10560697de7ed...0.0.1#diff)
 ______________
 
 
