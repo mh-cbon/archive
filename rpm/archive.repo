@@ -1,0 +1,6 @@
+[archive]
+name=cross-platform bin to create / extract zip, tgz archives
+baseurl=https://mh-cbon.github.io/archive/rpm/$basearch/
+enabled=1
+skip_if_unavailable=1
+gpgcheck=0
