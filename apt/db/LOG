@@ -1,0 +1,44 @@
+=============== Jul 30, 2016 (UTC) ===============
+00:52:37.865107 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+00:52:37.865265 db@open opening
+00:52:37.865478 version@stat F·[] S·0B[] Sc·[]
+00:52:37.869996 db@janitor F·2 G·0
+00:52:37.870020 db@open done T·4.746666ms
+00:52:37.870168 db@close closing
+00:52:37.870320 db@close done T·148.426µs
+=============== Jul 30, 2016 (UTC) ===============
+00:52:37.876622 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+00:52:37.876729 version@stat F·[] S·0B[] Sc·[]
+00:52:37.876737 db@open opening
+00:52:37.876774 journal@recovery F·1
+00:52:37.877179 journal@recovery recovering @1
+00:52:37.880066 memdb@flush created L0@2 N·1 S·295B "L4f..1fd,v1":"L4f..1fd,v1"
+00:52:37.880346 version@stat F·[1] S·295B[295B] Sc·[0.25]
+00:52:37.880699 db@janitor F·3 G·0
+00:52:37.880731 db@open done T·3.984407ms
+00:52:38.021381 db@close closing
+00:52:38.021456 db@close done T·72.871µs
+=============== Jul 30, 2016 (UTC) ===============
+00:52:38.027900 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+00:52:38.028023 version@stat F·[1] S·295B[295B] Sc·[0.25]
+00:52:38.028031 db@open opening
+00:52:38.028073 journal@recovery F·1
+00:52:38.028497 journal@recovery recovering @3
+00:52:38.032195 memdb@flush created L0@5 N·33 S·4KiB "E4f..1fd,v35":"xFP..58b,v28"
+00:52:38.032537 version@stat F·[2] S·4KiB[4KiB] Sc·[0.50]
+00:52:38.032978 db@janitor F·4 G·0
+00:52:38.033022 db@open done T·4.980461ms
+00:52:38.880041 db@close closing
+00:52:38.880157 db@close done T·111.791µs
+=============== Jul 30, 2016 (UTC) ===============
+00:52:38.886569 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+00:52:38.886688 version@stat F·[2] S·4KiB[4KiB] Sc·[0.50]
+00:52:38.886696 db@open opening
+00:52:38.886741 journal@recovery F·1
+00:52:38.886887 journal@recovery recovering @6
+00:52:38.890495 memdb@flush created L0@8 N·10 S·807B "E01..rib,v46":"xCP..58b,v38"
+00:52:38.890788 version@stat F·[3] S·5KiB[5KiB] Sc·[0.75]
+00:52:38.891176 db@janitor F·5 G·0
+00:52:38.891200 db@open done T·4.495746ms
+00:52:38.892611 db@close closing
+00:52:38.892685 db@close done T·68.858µs
